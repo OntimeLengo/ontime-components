@@ -1,0 +1,46 @@
+.ontime {
+  &-button {
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.common {
+      &.default { @include button-colors('common', 'default') }
+      &.success { @include button-colors('common', 'success') }
+      &.danger  { @include button-colors('common', 'danger')  }
+      &.warning { @include button-colors('common', 'warning') }
+      &.ghost   { @include button-colors('common', 'ghost')   }
+
+      @include button-disabled();
+    }
+
+    &.primary {
+      &.default { @include button-colors('primary', 'default') }
+      &.success { @include button-colors('primary', 'success') }
+      &.danger  { @include button-colors('primary', 'danger')  }
+      &.warning { @include button-colors('primary', 'warning') }
+      &.ghost   { @include button-colors('primary', 'ghost')   }
+
+      @include button-disabled();
+    }
+
+    &.large   { @include button-size($button-large); }
+    &.medium  { @include button-size($button-medium); }
+    &.small   { @include button-size($button-small); }
+    &.smaller { @include button-size($button-smaller); }
+
+    &-left_icon {
+      margin-right: 12px;
+    }
+    
+    &-right_icon {
+      margin-left: 12px;
+    }
+
+    .fa-spin {
+      margin-right: 12px;
+    }
+  }
+}

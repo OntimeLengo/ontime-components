@@ -1,0 +1,5 @@
+.sass-cache
+dist
+node_modules
+links.txt
+yarn-error.log

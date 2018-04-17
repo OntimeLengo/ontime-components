@@ -1,0 +1,60 @@
+.ontime {
+  &-checkbox {
+    position: relative;
+    display: inline-block;
+    color: $color-ghost;
+    font-size: 14px;
+    cursor: pointer;
+
+    &.is-focused {
+
+    }
+
+    .ontime-checkbox__icon {
+      
+    }
+
+    .ontime-checkbox__label {
+      margin-left: 10px;
+      user-select: none;
+    }
+
+    &.is-checked {
+      color: $color-primary;
+
+      .ontime-checkbox__label {
+        margin-left: 8px;
+      }
+    }
+
+    &.is-button {
+      padding: 12px 18px 12px 10px;
+      border: 1px solid $color-ghost;
+      
+      &.is-checked {
+        border: 1px solid $color-primary;
+      }
+    }
+
+    &.is-disabled {
+      color: rgba($color-ghost, 0.3);
+      cursor: inherit;
+    }
+
+    &.is-disabled {
+      &.is-button {
+        border: 1px solid rgba($color-ghost, 0.3);
+      }
+    }
+
+    .ontime-checkbox__input {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      opacity: 0;
+      outline: 0;
+    }
+  }
+}

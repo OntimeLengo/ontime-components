@@ -1,0 +1,7 @@
+.ontime {
+  &-label {
+    .required {
+      color: $color-danger;
+    }
+  }
+} 

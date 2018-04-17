@@ -1,0 +1,47 @@
+@mixin button-disabled() {
+  &.is-disabled {
+    background-color: rgba($color-ghost, 0.3);
+    color: rgba($color-disabled, 0.7);
+    border: 0;
+    cursor: initial;
+
+    &:hover {
+      background-color: rgba($color-ghost, 0.3);
+      border: 0;
+      color: rgba($color-disabled, 0.7);
+    }
+  }
+}
+
+@mixin button-size($arr) {
+  height: map-get($arr, 'height');
+  padding: map-get($arr, 'padding');
+  margin: map-get($arr, 'margin');
+  font-size: map-get($arr, 'font-size');
+}
+
+@mixin get-button-colors($arr, $name) {
+  $current: map-get($arr, $name);
+
+  background-color: rgba(map-get($current, 'bg'), map-get($current, 'alpha'));
+  color: map-get($current, 'color');
+  border: map-get($current, 'border');
+  transition: background-color 0.25s ease;
+
+  &:hover {
+    background-color: rgba(map-get($current, 'bg'), map-get($current, 'alpha-hover'));
+    color: map-get($current, 'color');
+  }
+
+  &:active {
+    background-color: rgba(map-get($current, 'bg'), map-get($current, 'alpha-active'));
+  }
+}
+
+@mixin button-colors($type, $name) {
+  @if $type == 'primary' {
+    @include get-button-colors($button-primary, $name);
+  } @else if $type == 'common' {
+    @include get-button-colors($button-common, $name);
+  }
+}

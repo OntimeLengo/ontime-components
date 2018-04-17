@@ -1,0 +1,73 @@
+{
+  "name": "ontime-components",
+  "version": "1.0.0",
+  "description": "List of react components and engine to generate any page",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "scripts": {
+    "test": "BABEL_ENV=test jest --watchAll --no-cache",
+    "storybook": "start-storybook -p 6006 -s ./.storybook",
+    "build-storybook": "build-storybook",
+    "build": "BABEL_ENV=build rollup -c",
+    "start": "BABEL_ENV=development rollup -c -w",
+    "lint": "eslint src --quiet",
+    "sass": "sass --watch src/scss/index.scss:dist/main.css",
+    "sassbuild": "sass src/scss/index.scss:dist/main.min.css --style compressed"
+  },
+  "keywords": [
+    "ontime",
+    "components",
+    "react",
+    "generate"
+  ],
+  "author": "Aries",
+  "license": "ISC",
+  "peerDependencies": {
+    "font-awesome": "*",
+    "prop-types": "*",
+    "react": "*",
+    "react-dom": "*"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^3.3.15",
+    "@storybook/addon-links": "^3.3.15",
+    "@storybook/react": "^3.3.15",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.2",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.7.0",
+    "font-awesome": "^4.7.0",
+    "jest": "^22.4.3",
+    "prop-types": "^15.6.1",
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0",
+    "react-test-renderer": "^16.2.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-peer-deps-external": "^2.1.0",
+    "rollup-plugin-postcss": "^1.4.1",
+    "rollup-plugin-url": "^1.3.0",
+    "sinon": "^4.4.10",
+    "storybook-readme": "^3.3.0"
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jest/config.js"
+  },
+  "files": [
+    "dist"
+  ]
+}

@@ -1,0 +1,113 @@
+$color-primary-0: #296cad;
+$color-primary-1: #385d82;
+$color-primary-2: #0d4070;
+$color-primary-3: #5c9ad6;
+$color-primary-4: #7caad6;
+
+$base-color-font: #4d4d4d;
+$base-color-border: #bebebe;
+
+$bg-color: #f3f3f3;
+
+
+$base-color-font-white: #fff;
+$color-disabled: #7d8ea1;
+
+// --- Colors --- ///
+$color-primary: #2A79D4;
+$color-success: #68CC70;
+$color-warning: #FF9A00;
+$color-danger: #FA5555;
+$color-ghost: #7D8EA1;
+
+// --- Button --- //
+$button-large:   (height: 40px, padding: 0 12px, margin: 0, font-size: 14px);
+$button-medium:  (height: 36px, padding: 0 12px, margin: 0, font-size: 14px);
+$button-small:   (height: 32px, padding: 0 10px, margin: 0, font-size: 12px);
+$button-smaller: (height: 28px, padding: 0 10px, margin: 0, font-size: 12px);
+
+$button-primary: (
+  default: (
+    bg: $color-primary, 
+    alpha: 1, 
+    alpha-hover: 0.7, 
+    alpha-active: 0.8, 
+    color: $base-color-font-white, 
+    border: 0
+  ),
+  success: (
+    bg: $color-success, 
+    alpha: 1,
+    alpha-hover: 0.7, 
+    alpha-active: 0.8, 
+    color: $base-color-font-white, 
+    border: 0
+  ),
+  warning: (
+    bg: $color-warning, 
+    alpha: 1,
+    alpha-hover: 0.7, 
+    alpha-active: 0.8, 
+    color: $base-color-font-white, 
+    border: 0
+  ),
+  danger: (
+    bg: $color-danger, 
+    alpha: 1, 
+    alpha-hover: 0.7, 
+    alpha-active: 0.8, 
+    color: $base-color-font-white, 
+    border: 0
+  ),
+  ghost: (
+    bg: $color-ghost, 
+    alpha: 0.1, 
+    alpha-hover: 0.3, 
+    alpha-active: 0.5, 
+    color: rgba($color-disabled, 0.7), 
+    border: 0
+  )
+);
+
+$button-common: (
+  default: (
+    bg: $color-primary, 
+    alpha: 0.1, 
+    alpha-hover: 0.3, 
+    alpha-active: 0.5, 
+    color: $color-primary, 
+    border: 0
+  ),
+  success: (
+    bg: $color-success, 
+    alpha: 0.1, 
+    alpha-hover: 0.3, 
+    alpha-active: 0.5, 
+    color: $color-success, 
+    border: 0
+  ),
+  warning: (
+    bg: $color-warning, 
+    alpha: 0.1, 
+    alpha-hover: 0.3, 
+    alpha-active: 0.5, 
+    color: $color-warning, 
+    border: 0
+  ),
+  danger: (
+    bg: $color-danger, 
+    alpha: 0.1, 
+    alpha-hover: 0.3, 
+    alpha-active: 0.5, 
+    color: $color-danger, 
+    border: 0
+  ),
+  ghost: (
+    bg: $color-ghost, 
+    alpha: 0.1, 
+    alpha-hover: 0.3, 
+    alpha-active: 0.5, 
+    color: rgba($color-disabled, 0.7), 
+    border: 0
+  )
+);
