@@ -1,0 +1,29 @@
+.ontime {
+  &-input {
+    .ontime-input-left_icon {
+      &.is-clickable {
+        cursor: pointer;
+      }
+    }
+
+    .ontime-input-right_icon {
+      &.is-clickable {
+        cursor: pointer;
+      }
+    }
+
+    .ontime-input-input {
+      &:focus {
+        outline: none
+      }
+    }
+
+    &.error {
+
+    }
+
+    &.is-disabled {
+
+    }
+  }
+}

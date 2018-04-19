@@ -32,15 +32,13 @@ export default class Checkbox extends PureComponent {
 
     this.state = {
       value: this.props.value,
-      label: this.props.label,
       isFocused: false
     };
   }
 
   componentWillReceiveProps(nextProps = {}) {
     this.setState({
-      value: nextProps.value,
-      label: nextProps.label
+      value: nextProps.value
     });
   }
 
@@ -101,8 +99,8 @@ export default class Checkbox extends PureComponent {
           onChange={ this.onChange.bind(this) }
         />
         {
-          (this.props.children || this.state.label) 
-          ? <span className="ontime-checkbox__label">{ this.props.children || this.state.label }</span>
+          (this.props.children || this.props.label) 
+          ? <span className="ontime-checkbox__label">{ this.props.children || this.props.label }</span>
           : null
         }
       </label>

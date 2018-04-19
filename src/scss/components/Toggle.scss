@@ -53,6 +53,16 @@
     &.is-disabled {
       color: rgba($color-ghost, 0.3);
       cursor: inherit;
+      
+      .ontime-toggle__icon {
+        background-color: rgba($color-ghost, 0.06);
+        border: 1px solid rgba($color-ghost, 0.3);
+
+        &::after {
+          background-color: transparent;
+          border: 1px solid rgba($color-ghost, 0.5);
+        }
+      }
     }
 
     .ontime-toggle__label {
