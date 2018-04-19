@@ -1,3 +1,10 @@
+@mixin transition($transition...) {
+  -moz-transition:    $transition;
+  -o-transition:      $transition;
+  -webkit-transition: $transition;
+  transition:         $transition;
+}
+
 @mixin button-disabled() {
   &.is-disabled {
     background-color: rgba($color-ghost, 0.3);
