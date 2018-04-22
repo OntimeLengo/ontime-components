@@ -15,7 +15,7 @@
 
 ```javascript
 import { Component } from 'react';
-import { Toggle } from 'ontime-dynamic';
+import { Toggle } from 'ontime-components';
 
 class Test extends Component {
 

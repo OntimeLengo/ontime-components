@@ -4,6 +4,7 @@ import Button from './components/Button';
 import Checkbox from './components/Checkbox';
 import Toggle from './components/Toggle';
 import Input from './components/Input';
+import InputErrors from './components/InputErrors';
 
 export {
   Label,
@@ -11,5 +12,6 @@ export {
   Icon,
   Checkbox,
   Toggle,
-  Input
+  Input,
+  InputErrors
 };

@@ -12,7 +12,7 @@
 <strong>To use "children" props</strong>
 ```javascript
 import { Component } from 'react';
-import { Label } from 'ontime-dynamic';
+import { Label } from 'ontime-components';
 
 class Test extends Component {
 
@@ -26,7 +26,7 @@ class Test extends Component {
 <strong>To use "value" props</strong>
 ```javascript
 import { Component } from 'react';
-import { Label } from 'ontime-dynamic';
+import { Label } from 'ontime-components';
 
 class Test extends Component {
 
@@ -40,7 +40,7 @@ class Test extends Component {
 <strong>To use "required" props</strong>
 ```javascript
 import { Component } from 'react';
-import { Label } from 'ontime-dynamic';
+import { Label } from 'ontime-components';
 
 class Test extends Component {
 

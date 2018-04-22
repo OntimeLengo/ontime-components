@@ -17,7 +17,7 @@ More details about icons here https://fontawesome.com/v4.7.0/
 <strong>Default using</strong>
 ```javascript
 import { Component } from 'react';
-import { Icon } from 'ontime-dynamic';
+import { Icon } from 'ontime-components';
 
 class Test extends Component {
 
@@ -31,7 +31,7 @@ class Test extends Component {
 <strong>onClick event</strong>
 ```javascript
 import { Component } from 'react';
-import { Icon } from 'ontime-dynamic';
+import { Icon } from 'ontime-components';
 
 class Test extends Component {
 

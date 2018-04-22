@@ -1,6 +1,8 @@
 import React from 'react';
 import { PureComponent, PropTypes } from '../../libs';
 import Icon from '../Icon';
+import Label from '../Label';
+import InputErrors from '../InputErrors';
 
 /**
  * Class Input
@@ -12,9 +14,11 @@ export default class Input extends PureComponent {
 
   static propTypes = {
     label: PropTypes.string,
-    labelPosition: PropTypes.oneOf(['top', 'left']),
+    labelPosition: PropTypes.oneOf(['top', 'left', 'right']),
+    required: PropTypes.bool,
     type: PropTypes.oneOf(['text', 'number', 'email', 'password']),
     size: PropTypes.oneOf(['large', 'medium', 'small', 'smaller']),
+    id: PropTypes.string,
     name: PropTypes.string,
     leftIcon: PropTypes.string,
     rightIcon: PropTypes.string,
@@ -36,7 +40,7 @@ export default class Input extends PureComponent {
   static defaultProps = {
     labelPosition: 'top',
     type: 'text',
-    size: 'medium'
+    size: 'small'
   }
 
   constructor(props) {
@@ -46,6 +50,14 @@ export default class Input extends PureComponent {
       value: this.props.value,
       isFocused: false
     };
+  }
+
+  get value() {
+    return this.state.value;
+  }
+
+  set value(value) {
+    this.setState({value: value});
   }
 
   focus() {
@@ -72,7 +84,8 @@ export default class Input extends PureComponent {
 
   onChange(e) {
     if (this.isActive()) {
-      
+      e.persist();
+
       this.setState({value: this.refs.input.value}, () => {
         this.props.onChange && this.props.onChange(e);
       });
@@ -97,6 +110,8 @@ export default class Input extends PureComponent {
 
   onKeyDown(e) {
     if (this.isActive() && this.props.onKeyDown) {
+      e.persist();
+      
       this.props.onKeyDown(e);
     }
   }
@@ -151,28 +166,46 @@ export default class Input extends PureComponent {
     return null;
   }
 
+  renderLabel() {
+    let className = '';
+
+    if (this.props.labelPosition === 'top') {
+      className = 'ontime-input-label_top';
+    }
+
+    return (
+      <Label 
+        className={ className }
+        value={ this.props.label } 
+        required={ this.props.required } 
+      />
+    );
+  }
+
+  renderErrors() {
+    return this.props.errors ? (<InputErrors value={ this.props.errors } />) : null;
+  }
+
   renderInput() {
     const props = {
       ref: 'input',
-      type: this.props.type || Input.type,
+      type: this.props.type,
     };
 
     const extraCss = {
       'is-focused': this.state.isFocused,
       'is-disabled': this.props.disabled,
-      'error': (this.props.error && this.props.error.length > 0)
+      'error': (this.props.errors && this.props.errors.length > 0)
     };
 
-    extraCss[this.props.size || Input.size] = true;
-
-    if (this.props.hasOwnProperty('value')) {
-      props.value = this.props.value;
-    }
+    extraCss[this.props.size] = true;
 
     if (this.props.hasOwnProperty('tabIndex')) {
       props.tabIndex = this.props.tabIndex;
     }
 
+    props.value = this.state.value || '';
+    this.props.id && (props.id = this.props.id);
     this.props.name && (props.name = this.props.name);
     this.props.placeholder && (props.placeholder = this.props.placeholder);
     this.props.autoFocus && (props.autoFocus = this.props.autoFocus);
@@ -193,7 +226,48 @@ export default class Input extends PureComponent {
   }
 
   render() {
-    return this.renderInput();
+    if (this.props.label) {
+      if (this.props.labelPosition === 'top') {
+        return (
+          <React.Fragment>
+            { this.renderLabel() }
+            { this.renderInput() }
+            { this.renderErrors() }
+          </React.Fragment>
+        );
+      } else if (this.props.labelPosition === 'left') {
+        return (
+          <div className="ontime-wrapinput">
+            <div className="ontime-wrapinput-label">
+              { this.renderLabel() }
+            </div>
+            <div className="ontime-wrapinput-input">
+              { this.renderInput() }
+              { this.renderErrors() }
+            </div>
+          </div>
+        );
+      } else if (this.props.labelPosition === 'right') {
+        return (
+          <div className="ontime-wrapinput">
+            <div className="ontime-wrapinput-input">
+              { this.renderInput() }
+              { this.renderErrors() }
+            </div>
+            <div className="ontime-wrapinput-label is-right">
+              { this.renderLabel() }
+            </div>
+          </div>
+        );
+      }
+    } else {
+      return (
+        <React.Fragment>
+          { this.renderInput() }
+          { this.renderErrors() }
+        </React.Fragment>
+      );
+    }
   }
 
 }
