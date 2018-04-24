@@ -1,0 +1,74 @@
+.ontime-label {
+  &.ontime-textarea-label_top {
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+}
+
+.ontime {
+  &-wraptextarea {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    &-label {
+      width: 175px;
+
+      &.is-right {
+        text-align: right;
+      }
+    }
+
+    &-input {
+      width: 100%;
+    }
+  }
+
+  &-textarea {
+    border: 1px solid $color-ghost;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    min-height: $textarea-min-height;
+    max-width: $textarea-max-width;
+    padding: 4px 6px;
+    margin: 0;
+    color: $color-ghost;
+    font-size: $input-font-size;
+
+    @include transition(border 0.5s);
+
+    &:focus {
+      outline: none
+    }
+
+    &::placeholder {
+      color: rgba($input-color, 0.3);
+    }
+
+    .ontime-label {
+      &.ontime-textarea-label_top {
+        margin-bottom: 2px;
+      }
+    }
+
+    &.is-focused {
+      border: 1px solid $color-primary;
+    }
+
+    &.error {
+      border: 1px solid $color-danger;
+    }
+
+    &.is-disabled {
+      border: 1px solid rgba($color-ghost, 0.3);
+      background-color: rgba($color-ghost, 0.1);
+    }
+  }
+}

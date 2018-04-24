@@ -5,6 +5,7 @@ import Checkbox from './components/Checkbox';
 import Toggle from './components/Toggle';
 import Input from './components/Input';
 import InputErrors from './components/InputErrors';
+import Textarea from './components/Textarea';
 
 export {
   Label,
@@ -13,5 +14,6 @@ export {
   Checkbox,
   Toggle,
   Input,
-  InputErrors
+  InputErrors,
+  Textarea
 };
