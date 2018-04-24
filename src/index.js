@@ -6,6 +6,7 @@ import Toggle from './components/Toggle';
 import Input from './components/Input';
 import InputErrors from './components/InputErrors';
 import Textarea from './components/Textarea';
+import Tag from './components/Tag';
 
 export {
   Label,
@@ -15,5 +16,6 @@ export {
   Toggle,
   Input,
   InputErrors,
-  Textarea
+  Textarea,
+  Tag
 };
