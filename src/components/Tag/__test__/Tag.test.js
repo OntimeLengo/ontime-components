@@ -13,9 +13,13 @@ describe('<Tag />', () => {
   it('value, isClosable', () => {
     const tag1 = shallow(<Tag value="John Snow" />);
     const tag2 = shallow(<Tag value="John Snow" isClosable={ false } />);
+    const tag3 = shallow(<Tag value={ {name: 'John Snow'} } mapValue="name" />);
+    const tag4 = shallow(<Tag value={ {name: 'John Snow'} } mapValue={ v => v.name } />);
 
     expect(tag1.text()).toEqual('John Snow<Icon />');
     expect(tag2.find('Icon')).toHaveLength(0);
+    expect(tag3.text()).toEqual('John Snow<Icon />');
+    expect(tag4.text()).toEqual('John Snow<Icon />');
   });
 
   it('events', () => {

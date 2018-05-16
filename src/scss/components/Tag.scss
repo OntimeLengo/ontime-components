@@ -1,6 +1,7 @@
 .ontime {
   &-tag {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     padding: 2px 4px;
     margin: 0;
     font-size: 12px;

@@ -1,0 +1,215 @@
+.ontime {
+  &-select {
+    position: relative;
+    border: 1px solid $color-ghost;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    color: $color-ghost;
+    font-size: $input-font-size;
+    cursor: pointer;
+
+    @include transition(border 0.35s);
+
+    .ontime-label {
+      &.ontime-input-label_top {
+        margin-bottom: 2px;
+      }
+    }
+
+    .ontime-select-left_col {
+      height: 100%;
+      width: 100%;
+
+      .ontime-input-input {
+        display: block;
+        height: 100%;
+        width: calc(100% - 8px);
+        margin: 0;
+        padding: 0 4px;
+        border: 0;
+        font-size: $input-font-size;
+        color: $input-color;
+        background-color: transparent;
+        cursor: pointer;
+
+        &.searchable {
+          height: calc(100% - 28px);
+        }
+  
+        &:focus {
+          outline: none
+        }
+  
+        &::placeholder {
+          color: rgba($input-color, 0.3);
+        }
+      }
+
+      .ontime-select-tags {
+        position: absolute;
+        line-height: normal;
+        white-space: normal;
+        z-index: 1;
+        top: 50%;
+        right: 22px;
+        width: calc(100% - 22px);
+        transform: translateY(-50%);
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &.searchable {
+          top: calc(50% - 28px);
+          transform: translateY(calc(-50% + 14px));
+        }
+  
+        .ontime-tag {
+          margin-left: 4px;
+          margin-top: 2px;
+          margin-bottom: 2px;
+        }
+      }
+
+      .ontime-input-wrapsearch {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+
+        .ontime-input-search {
+          width: 100%;
+          border: 0;
+        }
+      }
+    }
+
+    .ontime-select-right_col {
+      height: calc(100% - 6px);
+      width: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.clearable {
+        justify-content: space-between;
+      }
+    }
+
+    .ontime-select-popup {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      border-top-width: 0;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+      height: 0;
+      background-color: #fff;
+      z-index: 2;
+
+      @include transition(height 0.2s);
+
+      &.open {
+        box-shadow: 0px 4px 12px -4px rgba(0, 0, 0, 0.4);
+        border: 1px solid $color-primary;
+        overflow: initial;
+        height: initial;
+
+        .ontime-select-content {
+          opacity: initial;
+
+          @include transition(opacity 0.2s);
+        }
+      }
+
+      .ontime-select-content {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 200px;
+        opacity: 0;
+
+        @include transition(opacity 0.2s);
+
+        .ontime-select-list {
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+
+          .ontime-select-item {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 8px;
+
+            &:hover {
+              background-color: rgba($color-primary, 0.1);
+            }
+          }
+        }
+
+        .ontime-select-spinner {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.04);
+          text-align: center;
+          padding-top: 4px;
+          padding-bottom: 4px;
+        }
+
+        .ontime-select-empty {
+          width: 100%;
+          padding-top: 4px;
+          padding-bottom: 4px;
+          text-align: center;
+        }
+      }
+    }
+
+    &.large   { 
+      height: $input-large;
+
+      .ontime-input-input {
+        font-size: 18px;
+      }
+    }
+
+    &.medium  { 
+      height: $input-medium;
+
+      .ontime-input-input {
+        font-size: 16px;
+      }
+    }
+    
+    &.small   { height: $input-small; }
+    &.smaller { height: $input-smaller; }
+
+    &.is-focused {
+      border: 1px solid $color-primary;
+    }
+
+    &.error {
+      border: 1px solid $color-danger;
+    }
+
+    &.is-disabled {
+      border: 1px solid rgba($color-ghost, 0.3);
+      background-color: rgba($color-ghost, 0.1);
+    }
+  }
+}

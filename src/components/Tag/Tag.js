@@ -18,7 +18,8 @@ function stop(e) {
 export default class Tag extends PureComponent {
 
   static propTypes = {
-    value: PropTypes.string.isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number, PropTypes.object]).isRequired,
+    mapValue: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
     isClosable: PropTypes.bool,
     onClose: PropTypes.func,
     onClick: PropTypes.func,
@@ -56,15 +57,25 @@ export default class Tag extends PureComponent {
     this.props.onClick && (props.onClick = this.onClick.bind(this));
     this.props.onDoubleClick && (props.onDoubleClick = this.onDoubleClick.bind(this));
 
+    let value = this.props.value;
+
+    if (this.props.mapValue) {
+      if (typeof this.props.mapValue === 'function') {
+        value = this.props.mapValue(value);
+      } else {
+        value = value[this.props.mapValue];
+      }
+    }
+
     return (
       <span 
         { ...props }
         className={ this.className('ontime-tag') } 
         style={ this.style() }
       >
-        { this.props.value }
+        { value }
         { this.props.isClosable 
-          ? <Icon { ...propsIcon } value="times" />
+          ? <Icon { ...propsIcon } value="times-circle" />
           : null 
         }
       </span>

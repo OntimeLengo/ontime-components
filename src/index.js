@@ -7,6 +7,7 @@ import Input from './components/Input';
 import InputErrors from './components/InputErrors';
 import Textarea from './components/Textarea';
 import Tag from './components/Tag';
+import Select from './components/Select';
 
 export {
   Label,
@@ -17,5 +18,6 @@ export {
   Input,
   InputErrors,
   Textarea,
-  Tag
+  Tag,
+  Select
 };
