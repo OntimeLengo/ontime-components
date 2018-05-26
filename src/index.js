@@ -8,6 +8,7 @@ import InputErrors from './components/InputErrors';
 import Textarea from './components/Textarea';
 import Tag from './components/Tag';
 import Select from './components/Select';
+import Row from './components/Row';
 
 export {
   Label,
@@ -19,5 +20,6 @@ export {
   InputErrors,
   Textarea,
   Tag,
-  Select
+  Select,
+  Row
 };

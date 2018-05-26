@@ -1,0 +1,71 @@
+// 12 - 100
+// 6 - x
+
+@mixin make-col() {
+  @for $i from 1 through $row-max-cols {
+    $width: (($i * 100) / $row-max-cols);
+
+    &.col-#{$i} {
+      width: percentage($width / 100);
+    }
+  }
+}
+
+@mixin make-col-small() {
+  @for $i from 1 through $row-max-cols {
+    &.col-#{$i} {
+      width: 100%;
+    }
+  }
+}
+
+.ontime {
+  &-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    .ontime-row-col {
+      padding: 0;
+      margin-left: $row-margin;
+      margin-right: $row-margin;
+
+      &:last-child {
+        margin-right: 0;
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @include make-col();
+    }
+  }
+}
+
+@media (max-width: $row-max-media) {
+  .ontime {
+    &-row {
+      display: block;
+
+      .ontime-row-col {
+        width: 100%;
+        margin: $row-margin 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+  
+        &:first-child {
+          margin-top: 0;
+        }
+
+        @include make-col-small();
+      }
+    }
+  }
+}
