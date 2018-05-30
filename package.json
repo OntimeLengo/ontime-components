@@ -1,7 +1,8 @@
 {
   "name": "ontime-components",
   "version": "1.0.0",
-  "description": "List of react components and engine to generate any page",
+  "description": "List of react components",
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
@@ -18,11 +19,18 @@
   "keywords": [
     "ontime",
     "components",
-    "react",
-    "generate"
+    "react"
   ],
-  "author": "Aries",
-  "license": "ISC",
+  "author": "OntimeLengo",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OntimeLengo/ontime-components"
+  },
+  "bugs": {
+    "url": "https://github.com/OntimeLengo/ontime-components/issues"
+  },
+  "homepage": "https://github.com/OntimeLengo/ontime-components",
   "peerDependencies": {
     "font-awesome": "*",
     "prop-types": "*",

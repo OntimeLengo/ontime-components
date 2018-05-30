@@ -1,5 +1,6 @@
 .git
 .sass-cache
+.storybook
 node_modules
 links.txt
 yarn-error.log
