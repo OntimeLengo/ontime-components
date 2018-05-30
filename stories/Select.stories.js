@@ -74,6 +74,9 @@ storiesOf('Select', module)
           <Select multiple placeholder="select something" dataSource={ dataSource } />
         </div>
         <div style={ style }>
+          <Select clearable placeholder="select something" dataSource={ dataSource } />
+        </div>
+        <div style={ style }>
           <Select multiple clearable placeholder="select something" dataSource={ dataSource } />
         </div>
         <div style={ style }>
