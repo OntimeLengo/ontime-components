@@ -9,7 +9,7 @@
   "scripts": {
     "test": "BABEL_ENV=test jest --watchAll --no-cache",
     "storybook": "start-storybook -p 6006 -s ./.storybook",
-    "build-storybook": "build-storybook",
+    "build-storybook": "build-storybook --output-dir=docs",
     "build": "BABEL_ENV=build rollup -c",
     "start": "BABEL_ENV=development rollup -c -w",
     "lint": "eslint src --quiet",
