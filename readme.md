@@ -31,6 +31,8 @@ class Test extends Component {
 
 Please see the storybook page where you are able to see and test all components with documentation and examples.
 
+[ontime-components/storybook](https://ontimelengo.github.io/ontime-components)
+
 <h2>Credits</h2>
 
 ontime-components desctop UI elements for React 16.
