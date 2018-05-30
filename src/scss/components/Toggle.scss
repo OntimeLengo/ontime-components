@@ -1,7 +1,8 @@
 .ontime {
   &-toggle {
     position: relative;
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     color: $color-ghost;
     font-size: 14px;
     cursor: pointer;
