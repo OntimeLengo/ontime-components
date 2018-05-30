@@ -59,7 +59,7 @@ export default class List extends PureComponent {
     return (
       <li
         key={ strIdx } 
-        className="ontime-select-item" 
+        className={ 'ontime-select-item ' + (selected ? 'selected' : '') }
         data-at={ strIdx }
       >
         { this.props.customItemTpl

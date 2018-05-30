@@ -104,8 +104,8 @@
     .ontime-select-popup {
       position: absolute;
       top: 100%;
-      right: 0;
-      left: 0;
+      right: -1px;
+      left: -1px;
       border-top-width: 0;
       border: 0;
       padding: 0;
@@ -152,6 +152,10 @@
             justify-content: space-between;
             align-items: center;
             padding: 8px 8px;
+
+            &.selected {
+              color: $color-primary;
+            }
 
             &:hover {
               background-color: rgba($color-primary, 0.1);
