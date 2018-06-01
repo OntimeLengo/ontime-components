@@ -59,9 +59,7 @@ export default class Row extends PureComponent {
       const childrenLen = this.props.children.length;
       const len = Math.floor(Row.maxColumns / childrenLen);
 
-      sizes = this.props.children.map((item, idx) => {
-        return len;
-      });
+      sizes = this.props.children.map(() => len);
 
       const fullLen = childrenLen * len;
 

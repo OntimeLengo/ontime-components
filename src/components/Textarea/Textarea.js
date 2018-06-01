@@ -37,6 +37,12 @@ export default class Textarea extends PureComponent {
   constructor(props) {
     super(props);
 
+    this.onClick = this.onClick.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+
     this.state = {
       value: this.props.value || this.props.children || '',
       isFocused: false
@@ -148,11 +154,11 @@ export default class Textarea extends PureComponent {
     this.props.placeholder && (props.placeholder = this.props.placeholder);
     this.props.autoFocus && (props.autoFocus = this.props.autoFocus);
     this.props.disabled && (props.disabled = this.props.disabled);
-    this.props.onClick && (props.onClick = this.onClick.bind(this));
-    this.props.onKeyDown && (props.onKeyDown = this.onKeyDown.bind(this));
-    props.onChange = this.onChange.bind(this);
-    props.onFocus = this.onFocus.bind(this);
-    props.onBlur = this.onBlur.bind(this);
+    this.props.onClick && (props.onClick = this.onClick);
+    this.props.onKeyDown && (props.onKeyDown = this.onKeyDown);
+    props.onChange = this.onChange;
+    props.onFocus = this.onFocus;
+    props.onBlur = this.onBlur;
 
     return (
       <textarea

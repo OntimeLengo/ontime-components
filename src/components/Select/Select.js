@@ -54,9 +54,7 @@ export default class Select extends PureComponent {
     size: 'small',
     multiple: false,
     clearable: false,
-    autoFetch: false,
-    fetching: false,
-    fetched: false
+    autoFetch: false
   }
 
   static List = List
@@ -148,7 +146,6 @@ export default class Select extends PureComponent {
 
     if (this.isMultiple()) {
       const padding = 2;
-      const tags = this.refs.tags.clientHeight;
       const search = this.isSearchable() ? searchHeight : 0;
       
       if (!this._startHeight) {
@@ -338,8 +335,8 @@ export default class Select extends PureComponent {
                 key={ idx }
                 value={ value } 
                 mapValue={ this.props.mapValue } 
-                onClick={ e => this.focus() }
-                onClose={ e => {
+                onClick={ () => this.focus() }
+                onClose={ () => {
                   this.focus();
                   this.removeMultiValue(value);
                 } }
@@ -426,7 +423,7 @@ export default class Select extends PureComponent {
                 className="ontime-input-search" 
                 size="smaller"
                 leftIcon="search"
-                onClick={ e => {
+                onClick={ () => {
                   this.onFocus();
                   this.showPopup();
                 } }

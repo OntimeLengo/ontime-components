@@ -1,6 +1,5 @@
 import React from 'react';
 import { PureComponent, PropTypes } from '../../libs';
-import Label from '../Label';
 
 /**
  * Class Toggle
@@ -23,6 +22,11 @@ export default class Toggle extends PureComponent {
 
   constructor(props = {}) {
     super(props);
+
+    this.onClick = this.onClick.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onChange = this.onChange.bind(this);
 
     this.state = {
       value: this.props.value,
@@ -83,10 +87,10 @@ export default class Toggle extends PureComponent {
           type="checkbox"
           checked={ this.state.value }
           disabled={ this.props.disabled }
-          onClick={ this.onClick.bind(this) }
-          onFocus={ this.onFocus.bind(this) }
-          onBlur={ this.onBlur.bind(this) }
-          onChange={ this.onChange.bind(this) }
+          onClick={ this.onClick }
+          onFocus={ this.onFocus }
+          onBlur={ this.onBlur }
+          onChange={ this.onChange }
         />
         {
           (this.props.children || this.props.label) 

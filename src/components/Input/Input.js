@@ -46,6 +46,14 @@ export default class Input extends PureComponent {
   constructor(props) {
     super(props);
 
+    this.onClick = this.onClick.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onLeftIconClick = this.onLeftIconClick.bind(this);
+    this.onRightIconClick = this.onRightIconClick.bind(this);
+
     this.state = {
       value: this.props.value,
       isFocused: false
@@ -136,7 +144,7 @@ export default class Input extends PureComponent {
       };
 
       if (this.props.onLeftIconClick) {
-        props.onClick = this.onLeftIconClick.bind(this);
+        props.onClick = this.onLeftIconClick;
 
         props.className = props.className + ' is-clickable';
       }
@@ -155,7 +163,7 @@ export default class Input extends PureComponent {
       };
 
       if (this.props.onRightIconClick) {
-        props.onClick = this.onRightIconClick.bind(this);
+        props.onClick = this.onRightIconClick;
 
         props.className = props.className + ' is-clickable';
       }
@@ -210,11 +218,11 @@ export default class Input extends PureComponent {
     this.props.placeholder && (props.placeholder = this.props.placeholder);
     this.props.autoFocus && (props.autoFocus = this.props.autoFocus);
     this.props.disabled && (props.disabled = this.props.disabled);
-    this.props.onClick && (props.onClick = this.onClick.bind(this));
-    this.props.onKeyDown && (props.onKeyDown = this.onKeyDown.bind(this));
-    props.onChange = this.onChange.bind(this);
-    props.onFocus = this.onFocus.bind(this);
-    props.onBlur = this.onBlur.bind(this);
+    this.props.onClick && (props.onClick = this.onClick);
+    this.props.onKeyDown && (props.onKeyDown = this.onKeyDown);
+    props.onChange = this.onChange;
+    props.onFocus = this.onFocus;
+    props.onBlur = this.onBlur;
 
     return (
       <div className={ this.className('ontime-input', extraCss) } style={ this.style() }>

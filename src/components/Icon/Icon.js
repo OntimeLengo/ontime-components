@@ -15,6 +15,12 @@ export default class Icon extends PureComponent {
     onClick: PropTypes.func
   }
 
+  constructor(props) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
   onClick(e) {
     this.props.onClick && this.props.onClick(e);
   }
@@ -30,7 +36,7 @@ export default class Icon extends PureComponent {
       <i 
         className={ this.className('ontime-icon', extraClasses) } 
         style={ this.style() }
-        onClick={ this.onClick.bind(this) }
+        onClick={ this.onClick }
       />
     );
   }

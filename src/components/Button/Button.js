@@ -29,6 +29,12 @@ export default class Button extends PureComponent {
     size: 'medium'
   }
 
+  constructor(props) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
   onClick(e) {
     if (!this.props.loading) {
       this.props.onClick && this.props.onClick(e);
@@ -66,7 +72,7 @@ export default class Button extends PureComponent {
         className={ this.className('ontime-button', extraCss) }
         style={ this.style() }
         disabled={ this.props.disabled }
-        onClick={ this.onClick.bind(this) }
+        onClick={ this.onClick }
       >
         { this.props.loading ? <Icon value="spinner" className="fa-spin" /> : null }
         { LeftIcon ? LeftIcon : null }

@@ -30,6 +30,14 @@ export default class Tag extends PureComponent {
     isClosable: true
   }
 
+  constructor(props) {
+    super(props);
+    
+    this.onClose = this.onClose.bind(this);
+    this.onClick = this.onClick.bind(this);
+    this.onDoubleClick = this.onDoubleClick.bind(this);
+  }
+
   onClose(e) {
     stop(e);
 
@@ -52,10 +60,9 @@ export default class Tag extends PureComponent {
     const props = {};
     const propsIcon = {};
 
-    this.props.onClose && (propsIcon.onClick = this.onClose.bind(this));
-
-    this.props.onClick && (props.onClick = this.onClick.bind(this));
-    this.props.onDoubleClick && (props.onDoubleClick = this.onDoubleClick.bind(this));
+    this.props.onClose && (propsIcon.onClick = this.onClose);
+    this.props.onClick && (props.onClick = this.onClick);
+    this.props.onDoubleClick && (props.onDoubleClick = this.onDoubleClick);
 
     let value = this.props.value;
 

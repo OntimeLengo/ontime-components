@@ -1,7 +1,6 @@
 import React from 'react';
 import { PureComponent, PropTypes } from '../../libs';
 import Icon from '../Icon';
-import Label from '../Label';
 
 /**
  * Class Check

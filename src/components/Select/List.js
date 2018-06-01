@@ -22,6 +22,12 @@ export default class List extends PureComponent {
     fetching: PropTypes.bool
   }
 
+  constructor(props) {
+    super(props);
+
+    this.onClick = this.onClick.bind(this);
+  }
+
   onClick(e) {
     let el = e.target;
     let ul = e.currentTarget;
@@ -44,7 +50,7 @@ export default class List extends PureComponent {
   renderItem(item, idx) {
     const strIdx = idx.toString();
 
-    let content, selected;
+    let selected;
 
     if (this.props.multiple) {
       if (this.props.value.indexOf(item) >= 0) {
@@ -85,7 +91,7 @@ export default class List extends PureComponent {
               <Icon value="frown-o" />
             </div>
           }
-          <ul className="ontime-select-list" onClick={ this.onClick.bind(this) }>
+          <ul className="ontime-select-list" onClick={ this.onClick }>
             { this.props.data.map((item, idx) => this.renderItem(item, idx)) }
           </ul>
           { this.props.fetching && 
