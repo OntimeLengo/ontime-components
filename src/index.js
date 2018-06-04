@@ -9,8 +9,13 @@ import Textarea from './components/Textarea';
 import Tag from './components/Tag';
 import Select from './components/Select';
 import Row from './components/Row';
+import Notice from './components/Notice';
+
+import { debounce, utils } from './libs';
 
 export {
+  debounce, 
+  utils,
   Label,
   Button,
   Icon,
@@ -21,5 +26,6 @@ export {
   Textarea,
   Tag,
   Select,
-  Row
+  Row,
+  Notice
 };

@@ -130,3 +130,8 @@ $row-max-media: 400px;
 $row-max-cols: 12;
 $row-margin: 4px;
 $row-margin-bottom: 8px;
+
+$notice-default: rgba($color-ghost, 0.15);
+$notice-success: rgba($color-success, 0.15);
+$notice-warning: rgba($color-warning, 0.15);
+$notice-danger: rgba($color-danger, 0.15);

@@ -1,0 +1,30 @@
+.ontime {
+  &-notice {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+
+    &.default {
+      background-color: $notice-default;
+    }
+
+    &.success {
+      background-color: $notice-success;
+    }
+
+    &.warning {
+      background-color: $notice-warning;
+    }
+
+    &.danger {
+      background-color: $notice-danger;
+    }
+
+    .fa {
+      cursor: pointer;
+    }
+  }
+}
