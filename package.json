@@ -1,6 +1,6 @@
 {
   "name": "ontime-components",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "List of react components",
   "private": false,
   "main": "dist/index.js",
@@ -80,6 +80,7 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jest/config.js"
   },
   "files": [
-    "dist"
+    "dist",
+    "scss"
   ]
 }
