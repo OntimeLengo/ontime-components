@@ -29,7 +29,9 @@ export default {
     url(),
     babel({
       exclude: 'node_modules/**',
-      plugins: ['external-helpers']
+      plugins: ['external-helpers'],
+      externalHelpers: false, 
+      runtimeHelpers: true
     }),
     resolve(),
     commonjs()

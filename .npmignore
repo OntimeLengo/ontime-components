@@ -6,3 +6,4 @@ node_modules
 stories
 links.txt
 yarn-error.log
+build.sh

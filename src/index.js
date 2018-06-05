@@ -1,3 +1,8 @@
+import _regeneratorRuntime from 'babel-runtime/regenerator';
+import _Promise from 'babel-runtime/core-js/promise';
+import _classCallCheck from 'babel-runtime/helpers/classCallCheck';
+import _createClass from 'babel-runtime/helpers/createClass';
+
 import Label from './components/Label';
 import Icon from './components/Icon';
 import Button from './components/Button';
