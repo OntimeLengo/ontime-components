@@ -1,0 +1,34 @@
+.ontime {
+  &-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    &.left {
+      justify-content: flex-start;
+    }
+
+    &.center {
+      justify-content: center;
+    }
+
+    &.right {
+      justify-content: flex-end;
+    }
+
+    &.top {
+      align-items: flex-start;
+    }
+
+    &.middle {
+      align-items: center;
+    }
+
+    &.bottom {
+      align-items: flex-end;
+    }
+  }
+}

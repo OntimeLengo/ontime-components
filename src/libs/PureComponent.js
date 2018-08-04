@@ -14,13 +14,13 @@ export default class PureComponent extends ReactPureComponent {
       if (item) {
         if (typeof item === 'string') {
           item && acc.push(item);
-        } else if (typeof item === 'object') {
-          Object.keys(item).forEach(k => {
-            (k && item[k]) && acc.push(k);
-          });
         } else if (Array.isArray(item)) {
           item.forEach(i => {
             i && acc.push(i);
+          });
+        } else if (typeof item === 'object') {
+          Object.keys(item).forEach(k => {
+            (k && item[k]) && acc.push(k);
           });
         }
       }

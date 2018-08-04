@@ -1,6 +1,6 @@
 {
   "name": "ontime-components",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "List of react components",
   "private": false,
   "main": "dist/index.js",
