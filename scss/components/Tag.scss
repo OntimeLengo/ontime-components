@@ -6,16 +6,16 @@
     margin: 0;
     font-size: 12px;
     color: $tag-color;
-    background-color: rgba($color-ghost, 0.1);
+    background-color: $tag-bg;
     cursor: pointer;
     user-select: none;
 
     &:hover {
-      background-color: rgba($color-ghost, 0.3);
+      background-color: $tag-hover;
     }
 
     &:active {
-      background-color: rgba($color-ghost, 0.5);
+      background-color: $tag-active;
     }
 
     .ontime-icon {

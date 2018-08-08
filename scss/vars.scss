@@ -26,88 +26,131 @@ $button-medium:  (height: 36px, padding: 0 12px, margin: 0, font-size: 14px);
 $button-small:   (height: 32px, padding: 0 10px, margin: 0, font-size: 12px);
 $button-smaller: (height: 28px, padding: 0 10px, margin: 0, font-size: 12px);
 
+// Primary buttons colors
+$button-primary-default-bg: #2a79d4;
+$button-primary-default-hover: #69a1e0;
+$button-primary-default-active: #337fd7;
+$button-primary-default-color: $base-color-font-white;
+
+$button-primary-success-bg: #68cc70;
+$button-primary-success-hover: #95db9a;
+$button-primary-success-active: #86d68d;
+$button-primary-success-color: $base-color-font-white;
+
+$button-primary-warning-bg: #ff9a00;
+$button-primary-warning-hover: #ffc266;
+$button-primary-warning-active: #ffae33;
+$button-primary-warning-color: $base-color-font-white;
+
+$button-primary-danger-bg: #fa5555;
+$button-primary-danger-hover: #fc9999;
+$button-primary-danger-active: #fb7777;
+$button-primary-danger-color: $base-color-font-white;
+
+$button-primary-ghost-bg: #f2f3f5;
+$button-primary-ghost-hover: #e5e8ec;
+$button-primary-ghost-active: #d8dde2;
+$button-primary-ghost-color: #8e99a6;
+
+// Common buttons colors
+$button-common-default-bg: #e9f1fa;
+$button-common-default-hover: #bfd6f2;
+$button-common-default-active: #aac9ee;
+$button-common-default-color: $color-primary;
+
+$button-common-success-bg: #edf8e8;
+$button-common-success-hover: #d1efd4;
+$button-common-success-active: #b3e5b7;
+$button-common-success-color: #68cc70;
+
+$button-common-warning-bg: #fff4e5;
+$button-common-warning-hover: #ffe0b2;
+$button-common-warning-active: #ffcc7f;
+$button-common-warning-color: #ff9a00;
+
+$button-common-danger-bg: #feeded;
+$button-common-danger-hover: #fdcccc;
+$button-common-danger-active: #fcaaaa;
+$button-common-danger-color: #fa5555;
+
+$button-common-ghost-bg: #f2f3f5;
+$button-common-ghost-hover: #e5e8ec;
+$button-common-ghost-active: #d8dde2;
+$button-common-ghost-color: #8e99a6;
+
+// Mixins buttons array
 $button-primary: (
   default: (
-    bg: $color-primary, 
-    alpha: 1, 
-    alpha-hover: 0.7, 
-    alpha-active: 0.8, 
-    color: $base-color-font-white, 
+    bg: $button-primary-default-bg, 
+    hover: $button-primary-default-hover, 
+    active: $button-primary-default-active, 
+    color: $button-primary-default-color, 
     border: 0
   ),
   success: (
-    bg: $color-success, 
-    alpha: 1,
-    alpha-hover: 0.7, 
-    alpha-active: 0.8, 
-    color: $base-color-font-white, 
+    bg: $button-primary-success-bg, 
+    hover: $button-primary-success-hover, 
+    active: $button-primary-success-active, 
+    color: $button-primary-success-color, 
     border: 0
   ),
   warning: (
-    bg: $color-warning, 
-    alpha: 1,
-    alpha-hover: 0.7, 
-    alpha-active: 0.8, 
-    color: $base-color-font-white, 
+    bg: $button-primary-warning-bg,
+    hover: $button-primary-warning-hover, 
+    active: $button-primary-warning-active, 
+    color: $button-primary-warning-color, 
     border: 0
   ),
   danger: (
-    bg: $color-danger, 
-    alpha: 1, 
-    alpha-hover: 0.7, 
-    alpha-active: 0.8, 
-    color: $base-color-font-white, 
+    bg: $button-primary-danger-bg,
+    hover: $button-primary-danger-hover, 
+    active: $button-primary-danger-active, 
+    color: $button-primary-danger-color, 
     border: 0
   ),
   ghost: (
-    bg: $color-ghost, 
-    alpha: 0.1, 
-    alpha-hover: 0.3, 
-    alpha-active: 0.5, 
-    color: rgba($color-disabled, 0.7), 
+    bg: $button-primary-ghost-bg,
+    hover: $button-primary-ghost-hover, 
+    active: $button-primary-ghost-active,
+    color: $button-primary-ghost-color, 
     border: 0
   )
 );
 
 $button-common: (
   default: (
-    bg: $color-primary, 
-    alpha: 0.1, 
-    alpha-hover: 0.3, 
-    alpha-active: 0.5, 
-    color: $color-primary, 
+    bg: $button-common-default-bg, 
+    hover: $button-common-default-hover, 
+    active: $button-common-default-active, 
+    color: $button-common-default-color, 
     border: 0
   ),
   success: (
-    bg: $color-success, 
-    alpha: 0.1, 
-    alpha-hover: 0.3, 
-    alpha-active: 0.5, 
-    color: $color-success, 
+    bg: $button-common-success-bg, 
+    hover: $button-common-success-hover, 
+    active: $button-common-success-active, 
+    color: $button-common-success-color, 
     border: 0
   ),
   warning: (
-    bg: $color-warning, 
-    alpha: 0.1, 
-    alpha-hover: 0.3, 
-    alpha-active: 0.5, 
-    color: $color-warning, 
+    bg: $button-common-warning-bg,
+    hover: $button-common-warning-hover, 
+    active: $button-common-warning-active, 
+    color: $button-common-warning-color, 
     border: 0
   ),
   danger: (
-    bg: $color-danger, 
-    alpha: 0.1, 
-    alpha-hover: 0.3, 
-    alpha-active: 0.5, 
-    color: $color-danger, 
+    bg: $button-common-danger-bg,
+    hover: $button-common-danger-hover, 
+    active: $button-common-danger-active, 
+    color: $button-common-danger-color, 
     border: 0
   ),
   ghost: (
-    bg: $color-ghost, 
-    alpha: 0.1, 
-    alpha-hover: 0.3, 
-    alpha-active: 0.5, 
-    color: rgba($color-disabled, 0.7), 
+    bg: $button-common-ghost-bg,
+    hover: $button-common-ghost-hover, 
+    active: $button-common-ghost-active,
+    color: $button-common-ghost-color, 
     border: 0
   )
 );
@@ -124,14 +167,17 @@ $input-font-size: 14px;
 $textarea-min-height: 60px;
 $textarea-max-width: 100%;
 
-$tag-color: rgba($color-disabled, 0.7);
+$tag-bg: $button-common-ghost-bg;
+$tag-hover: $button-common-ghost-hover; 
+$tag-active: $button-common-ghost-active;
+$tag-color: $button-common-ghost-color;
 
 $row-max-media: 400px;
 $row-max-cols: 12;
 $row-margin: 4px;
 $row-margin-bottom: 8px;
 
-$notice-default: rgba($color-ghost, 0.15);
-$notice-success: rgba($color-success, 0.15);
-$notice-warning: rgba($color-warning, 0.15);
-$notice-danger: rgba($color-danger, 0.15);
+$notice-default: $button-common-default-bg;
+$notice-success: $button-common-success-bg;
+$notice-warning: $button-common-warning-bg;
+$notice-danger: $button-common-danger-bg;

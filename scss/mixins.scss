@@ -7,15 +7,15 @@
 
 @mixin button-disabled() {
   &.is-disabled {
-    background-color: rgba($color-ghost, 0.3);
-    color: rgba($color-disabled, 0.7);
+    background-color: $button-common-ghost-bg;
+    color: $button-common-ghost-color;
     border: 0;
     cursor: initial;
 
     &:hover {
-      background-color: rgba($color-ghost, 0.3);
+      background-color: $button-common-ghost-hover;
       border: 0;
-      color: rgba($color-disabled, 0.7);
+      color: $button-common-ghost-color;
     }
   }
 }
@@ -30,18 +30,18 @@
 @mixin get-button-colors($arr, $name) {
   $current: map-get($arr, $name);
 
-  background-color: rgba(map-get($current, 'bg'), map-get($current, 'alpha'));
+  background-color: map-get($current, 'bg');
   color: map-get($current, 'color');
   border: map-get($current, 'border');
   transition: background-color 0.25s ease;
 
   &:hover {
-    background-color: rgba(map-get($current, 'bg'), map-get($current, 'alpha-hover'));
+    background-color: map-get($current, 'hover');
     color: map-get($current, 'color');
   }
 
   &:active {
-    background-color: rgba(map-get($current, 'bg'), map-get($current, 'alpha-active'));
+    background-color: map-get($current, 'active');
   }
 }
 
