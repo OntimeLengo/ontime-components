@@ -1,11 +1,22 @@
 .ontime {
   &-container {
     display: flex;
-    flex-direction: row;
     flex-wrap: nowrap;
     padding: 0;
     margin: 0;
-    width: 100%;
+    width: max-content;
+
+    &.row {
+      flex-direction: row;
+    }
+
+    &.column {
+      flex-direction: column;
+    }
+
+    &.full {
+      width: 100%;
+    }
 
     &.left {
       justify-content: flex-start;

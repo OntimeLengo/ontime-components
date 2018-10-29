@@ -7,8 +7,7 @@ import InputErrors from '../InputErrors';
 /**
  * Class Input
  * 
- * @author Dmytro Hotovskyi
- * @created 19/04/2018
+ * @author Helen Gotovska
  */
 export default class Input extends PureComponent {
 
@@ -16,7 +15,7 @@ export default class Input extends PureComponent {
     label: PropTypes.string,
     labelPosition: PropTypes.oneOf(['top', 'left', 'right']),
     required: PropTypes.bool,
-    type: PropTypes.oneOf(['text', 'number', 'email', 'password']),
+    type: PropTypes.oneOf(['text', 'number', 'email', 'password', 'tel']),
     size: PropTypes.oneOf(['large', 'medium', 'small', 'smaller']),
     id: PropTypes.string,
     name: PropTypes.string,
@@ -24,10 +23,13 @@ export default class Input extends PureComponent {
     rightIcon: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     placeholder: PropTypes.string,
+    pattern: PropTypes.string,
+    mask: PropTypes.string,
     autoFocus: PropTypes.bool,
     disabled: PropTypes.bool,
     tabIndex: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     errors: PropTypes.oneOfType([PropTypes.array, PropTypes.bool]),
+    format: PropTypes.func,
     onClick: PropTypes.func,
     onChange: PropTypes.func,
     onFocus: PropTypes.func,
@@ -94,7 +96,13 @@ export default class Input extends PureComponent {
     if (this.isActive()) {
       e.persist();
 
-      this.setState({value: this.refs.input.value}, () => {
+      let value = this.refs.input.value;
+
+      if (this.props.format) {
+        value = this.props.format(value);
+      }
+
+      this.setState({ value }, () => {
         this.props.onChange && this.props.onChange(e);
       });
     }
@@ -216,6 +224,7 @@ export default class Input extends PureComponent {
     this.props.id && (props.id = this.props.id);
     this.props.name && (props.name = this.props.name);
     this.props.placeholder && (props.placeholder = this.props.placeholder);
+    this.props.pattern && (props.pattern = this.props.pattern);
     this.props.autoFocus && (props.autoFocus = this.props.autoFocus);
     this.props.disabled && (props.disabled = this.props.disabled);
     this.props.onClick && (props.onClick = this.onClick);

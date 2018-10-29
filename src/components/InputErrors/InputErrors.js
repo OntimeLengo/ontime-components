@@ -4,8 +4,7 @@ import { PureComponent, PropTypes } from '../../libs';
 /**
  * Class InputError
  * 
- * @author Dmytro Hotovskyi
- * @created 21/04/2018
+ * @author Helen Gotovska
  */
 export default class InputErrors extends PureComponent {
 

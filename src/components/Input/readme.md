@@ -15,10 +15,12 @@
 | rightIcon        | string         | Right input icon |
 | value            | string, number | default value. By default '' |
 | placeholder      | string         | input placeholder |
+| pattern          | string         | input pattern |
 | autoFocus        | bool           | set cursor to input by default |
 | disabled         | bool           | disabled input |
 | tabIndex         | string, number | input DOM tabIndex |
 | errors           | array, bool    | input errors. List of errors is shown below input. |
+| format           | function       | format value to prevent input incorrect value |
 | onClick          | function       | Raised when the user clicks on input |
 | onChange         | function       | Raised when the user changes input value |
 | onFocus          | function       | Raised when the input has received focus |

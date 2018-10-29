@@ -5,8 +5,7 @@ import Icon from '../Icon';
 /**
  * Class Button
  * 
- * @author Dmytro Hotovskyi
- * @created 28/03/2018
+ * @author Helen Gotovska
  */
 export default class Button extends PureComponent {
 
@@ -14,10 +13,10 @@ export default class Button extends PureComponent {
     label: PropTypes.string,
     leftIcon: PropTypes.string,
     rightIcon: PropTypes.string,
-    type: PropTypes.string,
+    type: PropTypes.oneOf(['button', 'submit']),
     primary: PropTypes.bool,
-    kind: PropTypes.string,
-    size: PropTypes.string,
+    kind: PropTypes.oneOf(['default', 'success', 'danger', 'warning', 'ghost', 'empty']),
+    size: PropTypes.oneOf(['large', 'medium', 'small', 'smaller']),
     loading: PropTypes.bool,
     disabled: PropTypes.bool,
     onClick: PropTypes.func

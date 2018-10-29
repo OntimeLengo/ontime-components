@@ -1,6 +1,7 @@
 .ontime {
   &-button {
     cursor: pointer;
+    border: 0;
 
     &:focus {
       outline: none;

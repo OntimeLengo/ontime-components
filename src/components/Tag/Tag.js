@@ -12,7 +12,7 @@ function stop(e) {
 /**
  * Class Tag
  * 
- * @author Dmytro Hotovskyi
+ * @author Helen Gotovska
  * @created 24/04/2018
  */
 export default class Tag extends PureComponent {
@@ -59,6 +59,7 @@ export default class Tag extends PureComponent {
   render() {
     const props = {};
     const propsIcon = {};
+    const extraClass = {'is-closable': this.props.isClosable};
 
     this.props.onClose && (propsIcon.onClick = this.onClose);
     this.props.onClick && (props.onClick = this.onClick);
@@ -77,7 +78,7 @@ export default class Tag extends PureComponent {
     return (
       <span 
         { ...props }
-        className={ this.className('ontime-tag') } 
+        className={ this.className('ontime-tag', extraClass) } 
         style={ this.style() }
       >
         { value }

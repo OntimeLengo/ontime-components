@@ -1,17 +1,15 @@
 import React from 'react';
 import { PureComponent, PropTypes } from '../../libs';
-import Icon from '../Icon';
 
 /**
- * Class Checkbox
+ * Class Radio
  * 
  * @author Helen Gotovska
  */
-export default class Checkbox extends PureComponent {
+export default class Radio extends PureComponent {
 
   static propTypes = {
-    type: PropTypes.string,
-    label: PropTypes.string,
+    label: PropTypes.any,
     children: PropTypes.any,
     value: PropTypes.bool,
     disabled: PropTypes.bool,
@@ -19,10 +17,6 @@ export default class Checkbox extends PureComponent {
     onFocus: PropTypes.func,
     onBlur: PropTypes.func,
     onChange: PropTypes.func
-  }
-
-  static defaultProps = {
-    type: 'checkbox' // or button
   }
 
   constructor(props = {}) {
@@ -47,12 +41,18 @@ export default class Checkbox extends PureComponent {
     this.setState({value: value});
   }
 
+  componentWillReceiveProps(nextProps = {}) {
+    this.setState({
+      value: nextProps.value
+    });
+  }
+
   onClick(e) {
     if (this.props.disabled) {
       return;
     }
 
-    this.props.onClick && this.props.onClick(e);
+    this.props.onClick && this.props.onClick(e, this.state.value);
   }
 
   onFocus(e) {
@@ -68,37 +68,36 @@ export default class Checkbox extends PureComponent {
   }
 
   onChange(e) {
-    e.persist();
-    
     if (this.props.disabled) {
       return;
     }
     
     const value = !this.state.value;
 
-    this.setState({value: value}, () => {
-      this.props.onChange && this.props.onChange(value, e);
-    });
+    this.props.onChange && this.props.onChange(value, e);
+
+    this.setState({value: value});
   }
 
   render() {
     let className = {
-      'is-button': (this.props.type === 'button'),
       'is-disabled': this.props.disabled,
       'is-focused': this.state.isFocused,
       'is-checked': this.state.value
     };
 
     return (
-      <label className={ this.className('ontime-checkbox', className) } style={ this.style() }>
-        <Icon 
-          className={ this.className('ontime-checkbox__icon') } 
-          value={ this.state.value ? 'check-square-o' : 'square-o' }
-        />
+      <label className={ this.className('ontime-radio', className) } style={ this.style() }>
+        <span className="ontime-radio__icon">
+          { this.state.value 
+            ? <span className="ontime-radio__dot" />
+            : null 
+          }
+        </span>
         <input 
-          className="ontime-checkbox__input"
-          type="checkbox"
-          checked={ this.state.value ? '1' : '0' }
+          className="ontime-radio__input"
+          type="radio"
+          checked={ this.state.value }
           disabled={ this.props.disabled }
           onClick={ this.onClick }
           onFocus={ this.onFocus }
@@ -107,7 +106,7 @@ export default class Checkbox extends PureComponent {
         />
         {
           (this.props.children || this.props.label) 
-          ? <span className="ontime-checkbox__label">{ this.props.children || this.props.label }</span>
+          ? <span className="ontime-radio__label">{ this.props.children || this.props.label }</span>
           : null
         }
       </label>
