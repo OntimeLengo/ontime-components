@@ -13,6 +13,6 @@ describe('<RadioGroup />', () => {
   it('container', () => {
     const rg1 = shallow(<RadioGroup data={ data } label="text here" />);
 
-    expect(rg1.find('div.component-radiogroup')).toHaveLength(1);
+    expect(rg1.find('div.ontime-radiogroup')).toHaveLength(1);
   });
 });

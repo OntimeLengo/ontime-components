@@ -4,14 +4,17 @@
   "description": "List of react components",
   "private": false,
   "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "module": "dist/index.js",
+  "jsnext:main": "dist/index.js",
+  "publishConfig": {
+    "access": "restricted"
+  },
   "scripts": {
     "test": "BABEL_ENV=test jest --watchAll --no-cache",
     "storybook": "start-storybook -p 6006 -s ./.storybook",
     "build-storybook": "build-storybook --output-dir=docs",
-    "build": "BABEL_ENV=build rollup -c",
-    "start": "BABEL_ENV=development rollup -c -w",
+    "build": "webpack --mode=production",
+    "dev": "webpack --mode=development",
     "lint": "eslint src --quiet",
     "devsass": "sass --watch scss/index.scss:dist/main.css",
     "sass": "sass scss/index.scss:dist/main.css",
@@ -39,35 +42,37 @@
     "react-dom": "*"
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^3.3.15",
-    "@storybook/addon-links": "^3.3.15",
-    "@storybook/react": "^3.3.15",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.2.2",
-    "babel-jest": "^22.4.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "@storybook/addon-actions": "^4.0.0",
+    "@storybook/addon-links": "^4.0.0",
+    "@storybook/react": "^4.0.0",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-es2015-rollup": "^3.0.0",
-    "babel-preset-react": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
+    "eslint": "^5.8.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-loader": "^2.1.1",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "font-awesome": "^4.7.0",
-    "jest": "^22.4.3",
-    "prop-types": "^15.6.1",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
+    "jest": "^23.6.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-test-renderer": "^16.2.0",
-    "sinon": "^4.4.10",
-    "storybook-readme": "^3.3.0"
+    "sinon": "^7.1.0",
+    "source-map-loader": "^0.2.4",
+    "storybook-readme": "^4.0.2",
+    "webpack": "^4.23.1",
+    "webpack-cli": "^3.1.2"
   },
   "jest": {
     "setupTestFrameworkScriptFile": "<rootDir>/src/tests/jest/config.js"
@@ -75,5 +80,8 @@
   "files": [
     "dist",
     "scss"
-  ]
+  ],
+  "resolutions": {
+    "babel-core": "7.0.0-bridge.0"
+  }
 }

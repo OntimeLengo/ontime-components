@@ -40,14 +40,12 @@ describe('<Button />', () => {
 
   it('kind', () => {
     const button1 = shallow(<Button kind="default" />);
-    const button2 = shallow(<Button kind="primary" />);
     const button3 = shallow(<Button kind="success" />);
     const button4 = shallow(<Button kind="danger" />);
     const button5 = shallow(<Button kind="warning" />);
     const button6 = shallow(<Button kind="ghost" />);
     
     expect(button1.find('button.default')).toHaveLength(1);
-    expect(button2.find('button.primary')).toHaveLength(1);
     expect(button3.find('button.success')).toHaveLength(1);
     expect(button4.find('button.danger')).toHaveLength(1);
     expect(button5.find('button.warning')).toHaveLength(1);

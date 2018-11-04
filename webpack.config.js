@@ -1,42 +1,23 @@
 const webpack = require('webpack');
 const path = require('path');
-const htmlPlugin = require('html-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 const config = {
-
-  devServer: {
-    host: '0.0.0.0',
-    port: 8888,
-    contentBase: path.resolve(__dirname, 'build'),
-    watchContentBase: true,
-    compress: true,
-    historyApiFallback: true,
-    proxy: {
-      '/api/**': {
-        target: 'http://localhost:3000',
-        secure: false,
-        changeOrigin: true
-      }
-    }
-  },
   
-  entry: path.resolve(__dirname, 'main', 'frontend', 'src', 'index.js'),
+  entry: path.resolve(__dirname, 'src', 'index.js'),
 
   output: {
-    publicPath: '/',
-    path: path.resolve(__dirname, 'build'),
-    filename: path.join('js', 'bundle.js')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'index.js',
+    libraryTarget: 'umd',
+    library: 'ontime-components',
+    umdNamedDefine: true
   },
 
+  devtool: 'source-map',
+
   plugins: [
-    new htmlPlugin({
-      template: './public/index.html',
-      favicon: './public/favicon.ico'
-    }),
-    new CopyWebpackPlugin([
-      {from: 'public/fonts', to: 'fonts'}
-    ])
+    new CleanWebpackPlugin(['dist']),
   ],
 
   module: {
@@ -45,10 +26,46 @@ const config = {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: 'babel-loader',
-        include: path.join(__dirname, 'main', 'frontend', 'src'),
+        include: path.join(__dirname, 'src'),
       }
     ]
-  }
+  },
+
+  resolve: {      
+    alias: {          
+      'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+      'prop-types': path.resolve(__dirname, './node_modules/prop-types'),
+      'font-awesome': path.resolve(__dirname, './node_modules/font-awesome')
+    }  
+  },  
+  
+  externals: {      
+    react: {
+      commonjs: "react",
+      commonjs2: "react",
+      amd: "React",
+      root: "React"
+    },      
+    "react-dom": {          
+      commonjs: "react-dom",
+      commonjs2: "react-dom",
+      amd: "ReactDOM",
+      root: "ReactDOM"
+    },
+    "prop-types": {
+      commonjs: "prop-types",
+      commonjs2: "prop-types",
+      amd: "PropTypes",
+      root: "PropTypes"
+    },
+    "font-awesome": {
+      commonjs: "font-awesome",
+      commonjs2: "font-awesome",
+      amd: "FontAwesome",
+      root: "FontAwesome"
+    }
+  } 
 };
 
 module.exports = config;
