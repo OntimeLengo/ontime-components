@@ -1,4 +1,4 @@
-import 'babel-polyfill';
+import 'idempotent-babel-polyfill';
 
 import Button from './components/Button';
 import Checkbox from './components/Checkbox';

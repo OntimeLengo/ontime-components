@@ -1,6 +1,6 @@
 {
   "name": "ontime-components",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "List of react components",
   "private": false,
   "main": "dist/index.js",
@@ -63,6 +63,7 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "font-awesome": "^4.7.0",
+    "idempotent-babel-polyfill": "^7.0.0",
     "jest": "^23.6.0",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",
