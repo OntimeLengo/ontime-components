@@ -1,5 +1,5 @@
-.sass-cache
-dist
+build
+coverage
 node_modules
-links.txt
 yarn-error.log
+test.js

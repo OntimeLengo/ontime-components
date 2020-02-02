@@ -1,14 +1,20 @@
 const webpack = require('webpack');
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const isDevelopment = process.env.NODE_ENV === 'development';
 
-const config = {
-  
-  entry: path.resolve(__dirname, 'src', 'index.js'),
+module.exports = {
+
+  entry: {
+    index: './src/index',
+    style: './scss/index.scss'
+  },
 
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'index.js',
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'build'),
+    globalObject: "this",
     libraryTarget: 'umd',
     library: 'ontime-components',
     umdNamedDefine: true
@@ -16,30 +22,37 @@ const config = {
 
   devtool: 'source-map',
 
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-  ],
-
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-        include: path.join(__dirname, 'src'),
+        test: /\.scss$/,
+        loader: [
+          isDevelopment ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: isDevelopment
+            }
+          }
+        ]
+      },
+      {
+        test: /\.ts(x?)$/,
+        use: 'ts-loader',
+        exclude: /node_modules/
       }
     ]
   },
 
-  resolve: {      
-    alias: {          
+  resolve: {
+    extensions: ['.ts', '.tsx', '.scss'],
+    alias: {
       'react': path.resolve(__dirname, './node_modules/react'),
-      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
-      'prop-types': path.resolve(__dirname, './node_modules/prop-types'),
-      'font-awesome': path.resolve(__dirname, './node_modules/font-awesome')
-    }  
-  },  
-  
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom')
+    }
+  },
+
   externals: {      
     react: {
       commonjs: "react",
@@ -52,20 +65,13 @@ const config = {
       commonjs2: "react-dom",
       amd: "ReactDOM",
       root: "ReactDOM"
-    },
-    "prop-types": {
-      commonjs: "prop-types",
-      commonjs2: "prop-types",
-      amd: "PropTypes",
-      root: "PropTypes"
-    },
-    "font-awesome": {
-      commonjs: "font-awesome",
-      commonjs2: "font-awesome",
-      amd: "FontAwesome",
-      root: "FontAwesome"
     }
-  } 
-};
+  },
 
-module.exports = config;
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    })
+    // new CleanWebpackPlugin(['build'])
+  ]
+};

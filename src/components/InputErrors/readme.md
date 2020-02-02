@@ -4,7 +4,9 @@ The component InputErrors is used to show list of errors below input.
 
 <h3>Props</h3>
 
-* value - List of errors. 
+| Property  | Type                                                           | Required | Description    |
+| --------- | -------------------------------------------------------------- | -------- | -------------- |
+| value     | Error[] \| string[] \| {name: string}[] \| {message: string}[] | true     | List of errors |
 
 <h3>Example</h3>
 

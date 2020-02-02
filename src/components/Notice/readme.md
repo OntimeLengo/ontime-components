@@ -1,5 +1,7 @@
 <h1>Notice</h1>
 
+The component is used to show notifications.
+
 <h3>Props</h3>
 
 | Property         | Type     | Description                                     |

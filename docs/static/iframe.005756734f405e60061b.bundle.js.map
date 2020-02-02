@@ -1,1 +1,0 @@
-{"version":3,"file":"static/iframe.005756734f405e60061b.bundle.js","sources":["webpack:///./src/libs/PropTypes.js"],"sourcesContent":["import PropTypes from 'prop-types';\n\nexport default PropTypes;\n"],"mappings":"AAEA","sourceRoot":""}

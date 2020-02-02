@@ -7,14 +7,16 @@ More details about icons here https://fontawesome.com/v4.7.0/
 
 <h3>Props</h3>
 
-* value - Icon name. 
-* size - Icon size. (lg, 2x, 3x, 4x, 5x)
-* onClick - Raised when the user clicks on Icon
-* className - additional css class
+| Property  | Type     | Required | Description                           |
+| --------- | -------- | -------- | ------------------------------------- |
+| value     | string   | true     | Icon name                             |
+| size      | string   | false    | Icon size. (lg, 2x, 3x, 4x, 5x)       |
+| onClick   | function | false    | Raised when the user clicks on Icon   |
 
 <h3>Examples</h3>
 
 <strong>Default using</strong>
+
 ```javascript
 import { Component } from 'react';
 import { Icon } from 'ontime-components';
@@ -29,6 +31,7 @@ class Test extends Component {
 ```
 
 <strong>onClick event</strong>
+
 ```javascript
 import { Component } from 'react';
 import { Icon } from 'ontime-components';

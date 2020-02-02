@@ -2,14 +2,16 @@
 
 <h3>Props</h3>
 
-* value - content
-* children - content
-* required - show required char after label text
-* className - additional css class
+| Property  | Type     | Required | Description                        |
+| --------- | -------- | -------- | ---------------------------------- |
+| value     | stirng   | false    | content                            |
+| children  | any      | false    | content                            |
+| required  | boolean  | false    | how required char after label text |
 
 <h3>Examples</h3>
 
 <strong>To use "children" props</strong>
+
 ```javascript
 import { Component } from 'react';
 import { Label } from 'ontime-components';
@@ -24,6 +26,7 @@ class Test extends Component {
 ```
 
 <strong>To use "value" props</strong>
+
 ```javascript
 import { Component } from 'react';
 import { Label } from 'ontime-components';
@@ -38,6 +41,7 @@ class Test extends Component {
 ```
 
 <strong>To use "required" props</strong>
+
 ```javascript
 import { Component } from 'react';
 import { Label } from 'ontime-components';

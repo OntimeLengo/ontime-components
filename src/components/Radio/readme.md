@@ -1,6 +1,6 @@
 <h1>Radio</h1>
 
-Component is used to choose one value from values
+Component is used to choose one value of values
 
 <h2>Radio</h2>
 

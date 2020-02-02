@@ -2,17 +2,18 @@
 
 <h3>Props</h3>
 
-* label - button label
-* leftIcon - left icon. See Icon component.
-* rightIcon - right icon. See Icon component.
-* type - button type (button, submit)
-* primary - set button as primary
-* kind - button kind (default, primary, success, danger, warning, ghost)
-* size - button size (medium, large, small, smaller)
-* loading - show spin
-* disabled - set button to disabled
-* onClick: Raised when the user clicks on button
-* className - additional css class
+| Property  | Type     | Required | Description                           |
+| --------- | -------- | -------- | ------------------------------------- |
+| type      | TType    | false    | button type                           |
+| size      | TSize    | false    | button size                           |
+| kind      | TKind    | false    | button kind                           |
+| label     | string   | false    | button label                          |
+| leftIcon  | string   | false    | left icon. See Icon component         |
+| rightIcon | string   | false    | right icon. See Icon component        |
+| primary   | boolean  | false    | set button as primary                 |
+| loading   | boolean  | false    | show spin                             |
+| disabled  | boolean  | false    | set button to disabled                |
+| onClick   | function | false    | Raised when the user clicks on button |
 
 <h3>Example</h3>
 

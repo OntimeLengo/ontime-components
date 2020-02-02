@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "es6",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018", "dom"],
+    "moduleResolution": "node",
+    "jsx": "react",
+    "declaration": false,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "outDir": "dist",
+    "rootDir": "../",
+    "removeComments": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitThis": false,
+    "noImplicitAny": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowJs": true
+  },
+  "include": [
+    "src/*.ts",
+    "src/*.tsx",
+    "src/**/*.ts", 
+    "src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "build",
+    "src/tests/**/*.ts"
+  ]
+}

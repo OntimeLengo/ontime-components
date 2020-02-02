@@ -7,7 +7,7 @@ The component is used to limitation rows from request
 | Property | Type     | Required | By default           | One of  | Description                    |
 | -------- | -------- | -------- | -------------------- | ------- | ------------------------------ |
 | limit    | number   |          | 20                   |         | Default limit                  |
-| data     | array    |          | [5, 10, 20, 50, 100] |         | List if limits                 |
+| data     | array    |          | [5, 10, 20, 50, 100] |         | List of limits                 |
 | onChange | function |          |                      |         | Raised when user changes value |
 
 ```javascript
